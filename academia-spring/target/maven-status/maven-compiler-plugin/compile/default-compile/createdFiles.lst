@@ -1,0 +1,15 @@
+com\everis\demo\model\UserOperationRecord.class
+com\everis\demo\model\Province.class
+com\everis\demo\model\UserOperationType.class
+com\everis\demo\service\PersonService.class
+com\everis\demo\model\User.class
+com\everis\demo\model\Profile.class
+com\everis\demo\model\Dealer.class
+com\everis\demo\utlis\ProfileOperation.class
+com\everis\demo\model\Country.class
+com\everis\demo\utlis\Validator.class
+com\everis\demo\model\Department.class
+com\everis\demo\repository\DepartmentRepository.class
+com\everis\demo\utlis\UserProfile.class
+com\everis\demo\ServletInitializer.class
+com\everis\demo\AcademiaApplication.class
