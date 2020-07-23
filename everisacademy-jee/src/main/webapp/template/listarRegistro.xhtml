@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<p:panelGrid style="margin: .5rem;">
+	<p:messages id="messages" showDetail="true" closable="true">
+		<p:autoUpdate />
+	</p:messages>
+</p:panelGrid>
+
+<h:panelGroup id="panelView" style="margin: .4rem;">
+
+	<p:dataTable var="person" value="#{helloworld.personList}">
+		<f:facet name="header">LISTA DE PERSON</f:facet>
+		<p:column headerText="ID">
+			<h:outputText value="#{person.id}" />
+		</p:column>
+		<p:column headerText="NAME">
+			<h:outputText value="#{person.name}" />
+		</p:column>
+
+		<p:column headerText="ESTADO CIVIL" style=" max-width: 50px;">
+			<h:outputText value="#{person.estadoCivil}" />
+		</p:column>
+
+		<p:column headerText="Nº DEPENDENTE" style=" max-width: 50px;">
+			<h:outputText value="#{person.numDependentes}" />
+		</p:column>
+
+		<p:column headerText="ACTION">
+			<p:panelGrid columns="2" layout="grid" style="margin: .4rem;">
+				<p:commandButton value="Edit" update="form"
+					style="background-color: green;"
+					actionListener="#{helloworld.editar(person)}" immediate="true">
+				</p:commandButton>
+				<p:commandButton value="Delete" update="form"
+					style="background-color: red;"
+					actionListener="#{helloworld.deletePerson(person)}"
+					immediate="true">
+				</p:commandButton>
+			</p:panelGrid>
+		</p:column>
+	</p:dataTable>
+</h:panelGroup>
+</html>

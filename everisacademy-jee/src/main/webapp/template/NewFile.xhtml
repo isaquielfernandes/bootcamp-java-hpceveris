@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>HPC Academy</title>
+</h:head>
+
+<h:body>
+	<div class="ui-fluid">
+
+		<p:selectOneMenu id="dependente"
+			value="#{helloworld.person.numDependentes}" required="true"
+			requiredMessage="Value is required">
+			<p:ajax listener="#{helloworld.saveDependente}"
+				update="panelPendente"></p:ajax>
+			<f:selectItem itemLabel="Select One" itemValue="" />
+			<f:selectItems value="#{helloworld.quantidade}" />
+		</p:selectOneMenu>
+
+		<p:spinner id="age" value="#{pend.age}" required="true"
+			requiredMessage="Value is required" />
+
+		<ui:composition>
+
+		</ui:composition>
+		<h:form id="form">
+			<p:panelGrid columns="1" layout="grid" style="margin: .4rem;">
+				<p:commandButton value="Novo" update="form"
+					action="#{helloworld.render}" immediate="true">
+				</p:commandButton>
+			</p:panelGrid>
+
+			<p:panelGrid style="margin: .5rem;">
+				<p:messages id="messages" showDetail="true" closable="true">
+					<p:autoUpdate />
+				</p:messages>
+			</p:panelGrid>
+		</h:form>
+	</div>
+</h:body>
+</html>
