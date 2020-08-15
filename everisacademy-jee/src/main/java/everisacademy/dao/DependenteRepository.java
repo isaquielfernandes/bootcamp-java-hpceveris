@@ -48,7 +48,7 @@ public class DependenteRepository implements DependenteDAO {
 		Connection connection = DataBase.getConnection();
 		String sql = "UPDATE boot.dependente SET name =?, age = ? WHERE dependente_id = ?;";
 		if (d == null || d.getId() == null) {
-			logger.info("Não foi possivel atualizar o registro");
+			logger.info("NÃ£o foi possivel atualizar o registro");
 			return;
 		}
 		try {
@@ -72,7 +72,7 @@ public class DependenteRepository implements DependenteDAO {
 		Connection connection = DataBase.getConnection();
 		String sql = "DELETE FROM boot.dependente WHERE person_fk = ?;";
 		if (d == null || d.getId() == null) {
-			logger.info("Não foi possivel excluir o registro");
+			logger.info("NÃ£o foi possivel excluir o registro");
 			return;
 		}
 		try {
@@ -144,9 +144,7 @@ public class DependenteRepository implements DependenteDAO {
 			if (rs.next()) {
 				count = rs.getInt(1);
 			}
-			ps.close();
-			rs.close();
-			connection.close();
+			
 		} catch (SQLException e) {
 			count = 0;
 		}finally {
